@@ -17,7 +17,7 @@ pipeline {
         }
         stage('coverage'){
           steps {
-                bat 'mvn cobertura:cobertura'
+                bat 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
             }
         }
         stage('generating'){
