@@ -15,16 +15,21 @@ pipeline {
                 bat 'mvn test'
             }
         }
+        stage('coverage'){
+          steps {
+                bat 'clean cobertura:cobertura'
+            }
+        }
         stage('generating'){
             steps {
                 bat 'mvn site'
             }
         }
+        
     }
     post {
         always {
             junit 'target/surefire-reports/**/*.xml'
-            step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
         }
     }
 }
