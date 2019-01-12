@@ -36,6 +36,7 @@ pipeline {
         always {
             junit 'target/surefire-reports/**/*.xml'
             cobertura coberturaReportFile: "target/site/cobertura/**/*.xml"
+            archive 'target/*.jar'
         }
     }
 }
