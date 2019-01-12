@@ -25,6 +25,11 @@ pipeline {
                 bat 'mvn site'
             }
         }
+        stage('packaging'){
+            steps {
+                bat 'mvn package'
+            }
+        }
         
     }
     post {
