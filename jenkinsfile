@@ -17,7 +17,7 @@ pipeline {
         }
         stage('coverage'){
           steps {
-                bat 'clean cobertura:cobertura'
+                bat 'mvn cobertura:cobertura'
             }
         }
         stage('generating'){
