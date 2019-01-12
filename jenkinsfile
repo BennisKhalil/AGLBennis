@@ -15,7 +15,11 @@ pipeline {
                 bat 'mvn test'
             }
         }
-        
+        stage('generating'){
+            steps {
+                bat 'mvn site'
+            }
+        }
     }
     post {
         always {
