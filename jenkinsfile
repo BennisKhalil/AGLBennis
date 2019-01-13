@@ -37,8 +37,7 @@ pipeline {
         }
         stage('Push to Docker Registry'){
             steps{
-            withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-        pushToImage('firstImage', 'first', USERNAME, PASSWORD)
+            bat 'mvn docker:push'
         }
     }
 }
