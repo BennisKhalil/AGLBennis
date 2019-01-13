@@ -56,6 +56,12 @@
   <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
   <versions-maven-plugin.version>1.2</versions-maven-plugin.version>
   <xml-maven-plugin.version>1.0-beta-3</xml-maven-plugin.version>
+                  
+                  
+                  <jacoco-maven-plugin.version>0.7.6.201602180812</jacoco-maven-plugin.version>
+		<sonar.host.url>http://localhos:9000/</sonar.host.url>
+                  <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+		
 </properties>
          
          
@@ -67,6 +73,28 @@
         <artifactId>sonar-maven-plugin</artifactId>
         <version>3.6.0.1398</version>
       </plugin>
+                 <plugin>
+				<groupId>com.viae-it.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>LATEST</version>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<configuration>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
+					<append>true</append>
+				</configuration>
+				<executions>
+					<execution>
+						<id>agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
                  <plugin>
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>cobertura-maven-plugin</artifactId>
