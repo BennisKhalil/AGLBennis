@@ -59,7 +59,7 @@
                   
                   
                   <jacoco-maven-plugin.version>0.7.6.201602180812</jacoco-maven-plugin.version>
-		<sonar.host.url>http://localhos:9000/</sonar.host.url>
+		<sonar.host.url>http://localhost:9000/</sonar.host.url>
                   <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
 		
 </properties>
