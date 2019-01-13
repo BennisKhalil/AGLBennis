@@ -124,6 +124,14 @@
                   <scope>test</scope>
             </dependency>
              <dependency>
+      <groupId>org.sonarsource.sonarqube</groupId>
+      <artifactId>sonar-plugin-api</artifactId>
+      <!-- minimal version of SonarQube to support. Note that the groupId was "org.codehaus.sonar" before version 5.2 -->
+      <version>7.5</version>
+      <!-- mandatory scope -->
+      <scope>provided</scope>
+    </dependency>
+             <dependency>
     <groupId>org.sonarsource.scanner.maven</groupId>
     <artifactId>sonar-maven-plugin</artifactId>
     <version>3.5.0.1254</version>
